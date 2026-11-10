@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#11122c"><title>Lotería Super Gana | Tu suerte comienza aquí</title>
+<meta name="description" content="Lotería Super Gana · tablero promocional de números de cuatro cifras.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css">
+</head><body>
+<div class="ambient ambient-a"></div><div class="ambient ambient-b"></div><div class="sparkle s1">✦</div><div class="sparkle s2">✧</div><div class="sparkle s3">✦</div>
+<header class="hero">
+ <nav class="nav"><div class="brand"><span class="brand-mark">SG</span><span>SUPER <b>GANA</b><small>LA SUERTE ESTÁ DE TU LADO</small></span></div><div class="nav-pill"><i></i> PLATAFORMA DE JUGADAS</div></nav>
+ <div class="hero-content">
+  <div class="eyebrow"><span>✦</span> UNA NUEVA FORMA DE JUGAR <span>✦</span></div>
+  <h1>HOY PUEDE SER<br><em>TU GRAN DÍA</em></h1>
+  <p class="hero-lead">Elige tus números favoritos y participa por una oportunidad extraordinaria.</p>
+  <div class="hero-tags"><span>✧ NÚMEROS DE 4 CIFRAS</span><span>✧ SELECCIÓN FÁCIL</span><span>✧ EXPERIENCIA MÓVIL</span></div>
+ </div>
+ <section class="prize-card">
+  <div class="prize-copy"><div class="mini-label">ELIGE TU COMBINACIÓN GANADORA</div><h2>¡QUE LA SUERTE<br><b>TE ENCUENTRE!</b></h2><p>Explora el tablero del 0001 al 9999 y selecciona las combinaciones disponibles.</p><div class="prize-stamp">SUPER GANA <span>✦</span></div></div>
+  <div class="prize-photo"><img class="prize-image" src="premio.jpg" alt="Premio de la rifa" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="photo-placeholder" style="display:none"><span>🎁</span><b>PREMIO ESPECIAL</b><small>Imagen del premio no disponible</small></div></div>
+ </section>
+ <div class="stats"><div><strong>9.999</strong><span>NÚMEROS EN TOTAL</span></div><div><strong id="availableCount">5.499</strong><span>DISPONIBLES</span></div><div><strong id="blockedCount">4.500</strong><span>NO DISPONIBLES</span></div></div>
+ <div class="progress-card"><div class="progress-head"><div><span class="eyebrow-small">AVANCE DEL TABLERO</span><strong><span id="progressPercent">45</span>% no disponibles</strong></div><span class="progress-chip">0001 — 9999</span></div><div class="progress-track"><div class="progress-fill" id="progressFill" style="width:45%"></div></div><div class="progress-labels"><span>0001</span><span>Estado de las combinaciones</span><span>9999</span></div></div>
+</header>
+<main>
+ <section class="payment-box"><div class="section-heading"><span class="section-icon">₿</span><div><span class="eyebrow-small">PAGO MÓVIL</span><h2>NUESTRO MÉTODO DE PAGO</h2></div></div>
+  <div class="payment-content"><div class="bank-card"><div class="bank-top"><span class="bank-symbol">B</span><div><small>BANCO RECEPTOR</small><strong class="bank-name">Banco Mercantil</strong></div><span class="secure-tag">PAGO MÓVIL</span></div>
+   <div class="payment-data-row"><span class="payment-label">TELÉFONO</span><strong class="payment-value">04262589614</strong><button class="copy-payment-btn" data-copy="04262589614" type="button">COPIAR</button></div>
+   <div class="payment-data-row"><span class="payment-label">CÉDULA</span><strong class="payment-value">20.499.447</strong><button class="copy-payment-btn" data-copy="20.499.447" type="button">COPIAR</button></div>
+  </div></div><p class="edit-note">Comprueba los datos del destinatario antes de realizar el pago.</p>
+ </section>
+ <section class="legend"><div><span class="dot available"></span> Disponible</div><div><span class="dot unavailable"></span> No disponible</div><div><span class="dot selected-dot"></span> Seleccionado</div><div class="selected-info">Elegidos: <b id="selectedCount">0</b></div></section>
+ <section class="purchase" id="purchaseSection" hidden><div class="ticket-icon">✦</div><h2>RESUMEN DE TU JUGADA</h2><p id="selectedText">Aún no has seleccionado números.</p><div class="price-summary"><span>TOTAL A PAGAR</span><strong id="totalPrice">0 números</strong></div><p class="pricing-breakdown" id="priceBreakdown">Cada boleta: 6.000 Bs.</p>
+  <div class="numbers-whatsapp-card"><span class="numbers-whatsapp-kicker">TU SELECCIÓN</span><strong><span id="whatsappSelectedCount">0</span> números seleccionados</strong><p id="whatsappSelectedNumbers">Elige números disponibles.</p><div class="whatsapp-total">TOTAL: <strong id="totalCost">0 Bs.</strong></div><button class="whatsapp-btn send-numbers-btn" id="sendNumbersBtn" type="button" disabled>ENVIAR NÚMEROS POR WHATSAPP ↗</button><p class="whatsapp-help">Si no se abre automáticamente, verifica que WhatsApp esté instalado y vuelve a tocar el botón.</p></div><button id="clearBtn" class="secondary" type="button">Limpiar selección</button>
+ </section>
+ <section class="number-panel"><div class="panel-title"><div class="panel-kicker">✦ TU COMBINACIÓN, TU OPORTUNIDAD ✦</div><h2>ESCOGE TUS NÚMEROS</h2><p>Los números se muestran siempre con cuatro cifras.</p></div>
+  <div class="number-tools"><label for="numberSearch">BUSCAR NÚMERO</label><input id="numberSearch" inputmode="numeric" maxlength="4" placeholder="Ej. 0025"><button id="clearSearch" type="button">Limpiar</button><span id="seriesLabel">Números 0001–9999</span></div>
+  <div id="numbers" class="numbers-grid"></div><p class="grid-note">Verde: disponible · Rojo: no disponible · Dorado: tu selección.</p>
+ </section>
+</main>
+<footer><div class="footer-brand">SUPER GANA <span>✦</span></div><small>© 2026 · Plataforma promocional independiente. No representa ni está afiliada a una lotería estatal.</small></footer>
+<script src="script.js"></script></body></html>
